@@ -1,19 +1,3 @@
-pipeline {
-    agent any
-    
-    stages {
-        stage('Build') {
-            steps {
-                echo "Building baz component..."
-                // Add your build steps here
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                echo "Testing baz component..."
-                // Add your test steps here
-            }
-        }
-    }
-} 
+@Library('jenkins-shared-library') _
+
+commonBuild() 
