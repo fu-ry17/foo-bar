@@ -1,6 +1,12 @@
-# Jenkins Monorepo Pipeline Setup
+plugins:
 
-This repository contains 
-a Jenkins pipeline configuration for managing a monorepo structure, allowing independent builds of different components while maintaining a single repository.
-
-## Repository Structure
+- folder plugin
+- git plugin
+- xml job
+- github groovy library
+- pipeline step api
+- pipeline utility steps
+- pipeline stage view
+- pipeline stage step
+- pipeline input step
+- pipeline wait step
