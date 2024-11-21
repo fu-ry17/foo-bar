@@ -1,3 +1,4 @@
 @Library('jenkins-shared-library') _
 
-commonBuild() 
+def pipeline = commonBuild()
+pipeline.call() 
