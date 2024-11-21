@@ -1,0 +1,46 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building qux component..."
+                // Add your build steps here
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo "Testing qux component..."
+                // Add your test steps here
+            }
+        }
+
+        stage('Check Changes') {
+            steps {
+                script {
+                    def changedDirs = getChangedDirs()
+                    echo "Changed directories: ${changedDirs}"
+                    `
+                    // Only proceed if changes affect qux directory
+                    if (changedDirs.contains('qux')) {
+                        echo "Changes detected in qux component"
+                    } else {
+                        echo "No changes in qux component - skipping further stages"
+                        currentBuild.result = 'SUCCESS'
+                        return
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "qux pipeline completed successfully"
+        }
+        failure {
+            echo "qux pipeline failed"
+        }
+    }
+} 
