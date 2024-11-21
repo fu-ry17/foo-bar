@@ -21,7 +21,6 @@ pipeline {
                 script {
                     def changedDirs = getChangedDirs()
                     echo "Changed directories: ${changedDirs}"
-                    `
                     // Only proceed if changes affect qux directory
                     if (changedDirs.contains('qux')) {
                         echo "Changes detected in qux component"
