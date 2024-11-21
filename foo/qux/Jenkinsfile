@@ -4,25 +4,16 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building qux component..."
+                echo "Building baz component..."
                 // Add your build steps here
             }
         }
         
         stage('Test') {
             steps {
-                echo "Testing qux component..."
+                echo "Testing baz component..."
                 // Add your test steps here
             }
-        }
-    }
-
-    post {
-        success {
-            echo "qux pipeline completed successfully"
-        }
-        failure {
-            echo "qux pipeline failed"
         }
     }
 } 
